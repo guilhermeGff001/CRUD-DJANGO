@@ -8,3 +8,4 @@ class Funcionario(models.Model):
     cargo = models.CharField(max_length=100, null=False, blank=False)
     salario = models.IntegerField(null=False, blank=False)
     data_de_admissao = models.DateField(auto_now_add=True, null=False, blank=False)
+    
