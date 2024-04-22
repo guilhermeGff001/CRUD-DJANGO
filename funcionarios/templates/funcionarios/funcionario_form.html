@@ -3,10 +3,21 @@
 {% load crispy_forms_tags %}
 
 {% block titulo_pagina %}
-Cadastrar Funcionario
+  {% if funcionario.pk %}
+    Editar Funcionario
+  {% else %}
+    Cadastrar Funcionario
+  {% endif %}
+
 {% endblock titulo_pagina %}
+
 {% block conteudo %}
-            <h1>Novo Funcionario</h1>
+            {% if funcionario.pk %}
+              <h1>Editar Funcionario</h1>
+            {% else %}
+              <h1>Novo Funcionario</h1>
+            {% endif %}
+            
             <form method = "POST">
                 {% csrf_token %}
                 {{ form|crispy }}

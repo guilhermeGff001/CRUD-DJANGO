@@ -2,6 +2,7 @@ from django.shortcuts import render
 from .models import Funcionario
 from django.views.generic.list import ListView
 from django.views.generic.edit import CreateView
+from django.views.generic.edit import UpdateView
 from django.urls import reverse_lazy
 
 
@@ -16,4 +17,9 @@ class FuncionarioListView(ListView):
 class FuncionarioCreateView(CreateView):
     model = Funcionario
     fields = [ "nome" , "sobrenome" , "data_de_nascimento" , "cargo" , "salario" ]
+    success_url =reverse_lazy("funcionario_list")
+
+class FuncionarioUpdateView(UpdateView):
+    model = Funcionario
+    fields = [ "nome" , "sobrenome" , "data_de_nascimento" , "cargo" , "salario"]
     success_url =reverse_lazy("funcionario_list")
