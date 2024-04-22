@@ -31,7 +31,7 @@ Lista de Funcionairos
                         <td>{{funcionario.data_de_admissao}}</td>
                         <td>
                             <a class="btn btn-secondary btn-sm" href="{% url "funcionario_update" pk=funcionario.pk %}">Editar</a>
-                            <a class="btn btn-danger btn-sm" href="#">Deletar</a>
+                            <a class="btn btn-danger btn-sm" href="{% url "funcionario_delete" pk=funcionario.pk %}">Deletar</a>
                         </td>
                     </tr>
                     {% endfor %}

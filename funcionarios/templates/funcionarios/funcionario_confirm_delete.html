@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block titulo_pagina %}Deletar Funcionario{% endblock titulo_pagina %}
+
+{% block conteudo %}
+    <h1>Excluir Funcionario</h1>
+    <p>Tem certeza que deseja excluir o funcionario <strong>{{funcionario.nome}} </strong> ?</p>
+
+    <form method = "POST">
+        {% csrf_token %}
+        <button type="submit" class="btn btn-danger btn-sm">Deletar</button>
+        <a class="btn btn-warning btn-sm" href="{% url "funcionario_list" %}">Cancelar</a>
+    </form>
+{% endblock conteudo %}
